@@ -3,8 +3,9 @@
 {
 	imports =
 		[ # Include the results of the hardware scan.
-		./hardware.nix
-    ../../users/dsa.nix
+      ./hardware.nix
+      ../../users/dsa.nix
+      ../../profiles/nixos/pc
 		];
 
 # Bootloader.
@@ -215,7 +216,9 @@
 			networkmanagerapplet
 			openconnect
 			home-manager
-      # docker-compose
+
+      # this is huge (~ 5GB), might need to remove if I need more space
+      texliveFull
 
 			mattermost-desktop
 			zotero
