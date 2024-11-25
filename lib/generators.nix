@@ -8,7 +8,7 @@
   ...
 } @ args: let
   inherit (lib.my) listModulesRecursive' rakeLeaves rakeLeavesWithSuffix;
-  # TODO: say that I copied this from ? (correia or borger or someone else)
+  # TODO: say that I copied this from ? (correia or someone else)
 
   /*
   Synopsis: mkPkgs overlays

@@ -33,9 +33,10 @@
     agenix,
     home-manager
   } @ inputs : let
+
     # modules shared by all hosts
     shared-modules = [
-      inputs.agenix.nixosModules.age
+      inputs.agenix.nixosModules.default
       inputs.home-manager.nixosModules.home-manager {
         home-manager = {
           useUserPackages = true;
@@ -47,22 +48,22 @@
     nixosConfigurations = {
       shannon = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = shared-modules ++ [ ./hosts/shannon/default.nix ];
+        modules = shared-modules ++ [ ./hosts/shannon ];
       };
 
       brouwer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = shared-modules ++ [ ./hosts/brouwer.nix ];
+        modules = shared-modules ++ [ ./hosts/brouwer ];
       };
 
       liskov = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = shared-modules ++ [ ./hosts/liskov.nix ];
+        modules = shared-modules ++ [ ./hosts/liskov ];
       };
     };
 
     homeConfigurations = {
-      "dsa@diogo-antunes" = home-manager.lib.homeManagerConfiguration {
+      "dsa@shannon" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         modules = [ ./home-manager/home.nix ];
       };

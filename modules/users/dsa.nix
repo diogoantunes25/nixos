@@ -3,14 +3,9 @@
 {
   users.users.dsa = {
     isNormalUser = true;
+    home  = "/home/dsa";
     description = "Diogo Antunes";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-		packages = with pkgs; [
-			firefox
-			thunderbird
-		];
-		shell = pkgs.fish;
-		useDefaultShell = true;
     openssh.authorizedKeys.keys = [
       # TODO: add my ssh keys
     ];

@@ -3,7 +3,7 @@
 */
 
 let
-  # add MPI, IST, and Github PKs ?
+  # TODO: add MPI, IST, and Github PKs ?
 
   dsa = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0idNvgGiucWgup/mP78zyC23uFjYq0evcWdjGQUaBH";
   users = [ dsa ];
