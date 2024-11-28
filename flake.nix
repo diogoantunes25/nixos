@@ -46,9 +46,21 @@
   in
   {
     nixosConfigurations = {
+      # NOTE: Place where module system in instantiated
       shannon = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = shared-modules ++ [ ./hosts/shannon ];
+
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            # Refer to the `system` parameter from
+            # the outer scope recursively
+            system = "x86_64-linux";
+            # To use Chrome, we need to allow the
+            # installation of non-free software.
+            config.allowUnfree = true;
+          };
+        };
       };
 
       brouwer = nixpkgs.lib.nixosSystem {
