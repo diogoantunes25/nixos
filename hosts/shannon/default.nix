@@ -12,6 +12,7 @@
     ../../modules/profiles/laptop.nix
 
     ../../modules/pieces/graphical/programs
+    ../../modules/pieces/latex.nix
 	];
 
 	boot.loader.systemd-boot = {
