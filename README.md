@@ -9,7 +9,7 @@
     - [`profiles`](./profiles): these can be thought of as roles that can be given to hosts/users
     - [`users`](./users): users for the different roles
     - [`pieces`](./users): configuration pieces
-- [`overlays`](./overlays): TBA
+- [`overlays`](./overlays): nixpkgs overalys
 - [`pkgs`](./pkgs): packages
 - [`secrets`](./secrets): agenix secrets
 - [`dotfiles`](./dotfiles): configuration files that can't be expressed through nix
