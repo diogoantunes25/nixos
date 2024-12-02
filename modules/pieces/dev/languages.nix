@@ -32,6 +32,8 @@
 			gcc
 			gnumake
 			gdb
+      bear # for the compilation database
+      clang-tools # for linting in neovim
 
       # Compilers
 			flex

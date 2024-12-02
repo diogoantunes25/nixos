@@ -23,6 +23,11 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    phdw = {
+      # FIXME: move to github link
+      url = "git+file:///home/dsa/work/small-projects/personal-websites/dashboard";
+    };
   };
 
   outputs = {
@@ -31,7 +36,8 @@
     nixpkgs-unstable,
     flake-utils,
     agenix,
-    home-manager
+    home-manager,
+    phdw
   } @ inputs : let
 
     # modules shared by all hosts
@@ -53,24 +59,35 @@
 
         specialArgs = {
           pkgs-unstable = import nixpkgs-unstable {
-            # Refer to the `system` parameter from
-            # the outer scope recursively
             system = "x86_64-linux";
-            # To use Chrome, we need to allow the
-            # installation of non-free software.
-            config.allowUnfree = true;
           };
+
+          inherit phdw;
         };
       };
 
       brouwer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = shared-modules ++ [ ./hosts/brouwer ];
+
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+          };
+
+          inherit phdw;
+        };
       };
 
       liskov = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = shared-modules ++ [ ./hosts/liskov ];
+
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+          };
+        };
       };
     };
 

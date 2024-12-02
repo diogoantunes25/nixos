@@ -14,9 +14,6 @@
     lua51Packages.lua
     lua51Packages.lua
     lua51Packages.luarocks-nix
-    clang-tools
-
-    bear
   ];
 
   # TODO: add home manager config

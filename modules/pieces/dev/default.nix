@@ -15,13 +15,13 @@
   imports = [
       ./nvim.nix
       ./emacs.nix
+      ./git.nix
       ./languages.nix
       ./shell.nix
   ];
 
   # FIXME:
 	environment.systemPackages = with pkgs; [
-			git
 			wget
 			srm
 			zip
