@@ -34,6 +34,7 @@
 			gdb
       bear # for the compilation database
       clang-tools # for linting in neovim
+      boost
 
       # Compilers
 			flex
@@ -43,10 +44,10 @@
 			graphviz
 
       # Lisp
-			chez
-			sbcl
+			# chez
+			# sbcl
 
-      dotnet-runtime
+      # dotnet-runtime
 
 			(python311.withPackages (ps: [
 									 ps.seaborn
