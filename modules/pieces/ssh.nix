@@ -8,13 +8,6 @@
   pkgs,
   ...
 }:
-
-let
-  # Keys authorized for ssh as root
-  sshKeys = [
-      # FIXME:
-  ];
-in
 {
   /*
    FIXME:

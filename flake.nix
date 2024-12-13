@@ -26,7 +26,7 @@
 
     phdw = {
       # FIXME: move to github link
-      url = "git+file:///home/dsa/work/small-projects/personal-websites/dashboard";
+      url = "git+file:///home/dsa/work/small-projects/personal-websites/live/dashboard";
     };
   };
 
@@ -62,7 +62,7 @@
             system = "x86_64-linux";
           };
 
-          inherit phdw;
+          inherit phdw inputs;
         };
       };
 
@@ -75,7 +75,7 @@
             system = "x86_64-linux";
           };
 
-          inherit phdw;
+          inherit phdw inputs;
         };
       };
 
