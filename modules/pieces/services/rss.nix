@@ -4,6 +4,7 @@
   pkgs,
   ...
 }:
+  let virtualHost = "freshrss.dsantunes.com"; in
 {
   age.secrets.freshrssPwd = {
     file = ../../../secrets/freshrssPwd.age;
@@ -21,9 +22,19 @@
     enable = true;
     passwordFile = config.age.secrets.freshrssPwd.path;
     database.passFile = config.age.secrets.freshrssDbPwd.path;
-    baseUrl = "http://localhost";
-    virtualHost = "freshrss";
+    baseUrl = "https://freshrss.dsantunes.com";
+    virtualHost = virtualHost;
     authType = "form";
     user = "freshrss";
+  };
+
+
+  services.nginx = {
+    virtualHosts = {
+      "${virtualHost}" = {
+        forceSSL = true;
+        enableACME = true;
+      };
+    };
   };
 }

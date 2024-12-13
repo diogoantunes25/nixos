@@ -8,6 +8,7 @@
     ../../modules/pieces/services/projectPages.nix
     ../../modules/pieces/services/website.nix
     ../../modules/pieces/services/dashboard.nix
+    ../../modules/pieces/services/rss.nix
   ];
 
   networking.hostName = "brouwer";

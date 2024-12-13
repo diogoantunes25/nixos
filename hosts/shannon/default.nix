@@ -14,7 +14,7 @@
     ../../modules/pieces/graphical/programs
     ../../modules/pieces/latex.nix
 
-    ../../modules/pieces/services/phdwarrior.nix
+    # ../../modules/pieces/services/phdwarrior.nix
 	];
 
 	boot.loader.systemd-boot = {
