@@ -16,5 +16,14 @@
     lua51Packages.luarocks-nix
   ];
 
+  # environment.variables.EDITOR = "nvim";
+
+  # programs.neovim = {
+    # enable = true;
+    # defaultEditor = true;
+    # vimAlias = false;
+    # viAlias = false;
+  # };
+
   # TODO: add home manager config
 }
