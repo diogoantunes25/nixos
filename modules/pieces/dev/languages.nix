@@ -5,6 +5,10 @@
   ...
 }:
 
+let
+    # Custom package from <root>/pkgs
+    spinrcp = pkgs.callPackage ../../../pkgs/spinrcp.nix { };
+in
 {
 	environment.systemPackages = with pkgs; [
 			coq
@@ -68,6 +72,9 @@
 			cargo
 			rustc
 			rustfmt
+
+      spinrcp
+      spin
   ];
 
   # Allow unfree packages (for VSCode)
