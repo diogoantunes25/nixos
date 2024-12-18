@@ -44,18 +44,11 @@ let
     # categories = [ "Network" ];
   };
 in
-# Combined
 pkgs.symlinkJoin {
   name = "SpinRCP"; paths = [ spinPackage desktop ];
+
+  meta = {
+    description = "An Integrated Development Environment for the Spin Model Checker";
+    homepage = "http://lms.uni-mb.si/spinrcp/";
+  };
 }
-# pkgs.stdenv.mkDerivation {
-#   pname = "SpinRCP";
-#   version = spinPackage.version;
-#   buildInputs = [ spinPackage desktop ];
-#
-#   installPhase = ''
-#       mkdir -p $out/bin $out/share/applications
-#       ln -s ${spinPackage}/bin/SpinRCP $out/bin/SpinRCP
-#       cp ${desktop}/share/applications/*.desktop $out/share/applications/
-#     '';
-# }
