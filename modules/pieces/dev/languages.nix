@@ -16,7 +16,7 @@ in
 
 			ocaml
 
-      dafny
+      # dafny
       # FIXME: Dafny was not working properly (used stateful way in vscode)
       #(vscode-with-extensions.override {
       #  vscodeExtensions = with vscode-extensions; [
@@ -44,8 +44,6 @@ in
 			flex
 			bison
 			yasm
-			doxygen
-			graphviz
 
       # Lisp
 			# chez
