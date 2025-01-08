@@ -23,11 +23,21 @@
     ../pieces/graphical/screen.nix
     ../pieces/graphical/x11.nix
     ../pieces/keyboard.nix
-    ../pieces/network
     ../pieces/sound
     ../pieces/ssh.nix
     ../pieces/tailscale.nix
   ];
 
 	programs.nix-ld.enable = true; # HACK:
+
+  # Configure networkinig
+  systemd.services.NetworkManager-wait-online.enable = true;
+  services.resolved.enable = true;
+
+	environment.systemPackages = with pkgs; [
+			networkmanagerapplet
+			openconnect
+  ];
+
+  networking.networkmanager.enable = true;
 }
