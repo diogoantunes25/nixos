@@ -67,6 +67,19 @@
         };
       };
 
+      dijkstra = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = shared-modules ++ [ ./hosts/dijkstra ];
+
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+          };
+
+          inherit phdw inputs;
+        };
+      };
+
       brouwer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = shared-modules ++ [ ./hosts/brouwer ];
