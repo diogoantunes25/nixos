@@ -15,6 +15,7 @@
     # Browser
     google-chrome
     firefox
+    nyxt
 
     # Mail
     thunderbird
@@ -37,6 +38,7 @@
 
     # Other
 		zoom-us
+    skypeforlinux
 		spotify
     zotero
     obs-studio
